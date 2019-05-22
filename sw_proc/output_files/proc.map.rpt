@@ -1,0 +1,901 @@
+Analysis & Synthesis report for proc
+Sun May 19 18:13:25 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Protected by Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Source assignments for Top-level Entity: |proc
+ 12. Source assignments for cu_FSM:cu
+ 13. Parameter Settings for User Entity Instance: add_sub_unit:addsub
+ 14. Parameter Settings for User Entity Instance: regn:reg_0
+ 15. Parameter Settings for User Entity Instance: regn:reg_1
+ 16. Parameter Settings for User Entity Instance: regn:reg_2
+ 17. Parameter Settings for User Entity Instance: regn:reg_3
+ 18. Parameter Settings for User Entity Instance: regn:reg_4
+ 19. Parameter Settings for User Entity Instance: regn:reg_5
+ 20. Parameter Settings for User Entity Instance: regn:reg_6
+ 21. Parameter Settings for User Entity Instance: regn:reg_7
+ 22. Parameter Settings for User Entity Instance: regn:reg_G
+ 23. Parameter Settings for User Entity Instance: regn:reg_IR
+ 24. Parameter Settings for User Entity Instance: regn:reg_A
+ 25. Parameter Settings for User Entity Instance: cu_FSM:cu
+ 26. Port Connectivity Checks: "cu_FSM:cu|dec3to8:decY"
+ 27. Port Connectivity Checks: "cu_FSM:cu|dec3to8:decX"
+ 28. Port Connectivity Checks: "add_sub_unit:addsub"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun May 19 18:13:25 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; proc                                        ;
+; Top-level Entity Name           ; proc                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 101                                         ;
+; Total pins                      ; 22                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; proc               ; proc               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
+; regn.v                           ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/regn.v              ;         ;
+; proc_multiplexers.v              ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/proc_multiplexers.v ;         ;
+; dec3to8.v                        ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/dec3to8.v           ;         ;
+; cu_FSM.v                         ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/cu_FSM.v            ;         ;
+; add_sub_unit.v                   ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/add_sub_unit.v      ;         ;
+; proc.v                           ; yes             ; User Verilog HDL File  ; D:/OneDrive/sw/sw_proc/proc.v              ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 137         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 215         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 47          ;
+;     -- 5 input functions                    ; 31          ;
+;     -- 4 input functions                    ; 13          ;
+;     -- <=3 input functions                  ; 124         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 101         ;
+;                                             ;             ;
+; I/O pins                                    ; 22          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; Clock~input ;
+; Maximum fan-out                             ; 101         ;
+; Total fan-out                               ; 1010        ;
+; Average fan-out                             ; 2.81        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name       ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
+; |proc                               ; 215 (98)            ; 101 (0)                   ; 0                 ; 0          ; 22   ; 0            ; |proc                                ; proc              ; work         ;
+;    |add_sub_unit:addsub|            ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|add_sub_unit:addsub            ; add_sub_unit      ; work         ;
+;    |cu_FSM:cu|                      ; 37 (37)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|cu_FSM:cu                      ; cu_FSM            ; work         ;
+;    |proc_multiplexers:multiplexers| ; 70 (70)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|proc_multiplexers:multiplexers ; proc_multiplexers ; work         ;
+;    |regn:reg_0|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_0                     ; regn              ; work         ;
+;    |regn:reg_1|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_1                     ; regn              ; work         ;
+;    |regn:reg_2|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_2                     ; regn              ; work         ;
+;    |regn:reg_3|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_3                     ; regn              ; work         ;
+;    |regn:reg_4|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_4                     ; regn              ; work         ;
+;    |regn:reg_5|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_5                     ; regn              ; work         ;
+;    |regn:reg_6|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_6                     ; regn              ; work         ;
+;    |regn:reg_7|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_7                     ; regn              ; work         ;
+;    |regn:reg_A|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_A                     ; regn              ; work         ;
+;    |regn:reg_G|                     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_G                     ; regn              ; work         ;
+;    |regn:reg_IR|                    ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |proc|regn:reg_IR                    ; regn              ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                         ;
++------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                            ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; cu_FSM:cu|Tstep_Q[0]                     ; yes                                                              ; yes                                        ;
+; cu_FSM:cu|Tstep_Q[1]                     ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 2 ;                                                                  ;                                            ;
++------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 101   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |proc|cu_FSM:cu|Mux12                          ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |proc|cu_FSM:cu|Mux19                          ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 63 LEs               ; 0 LEs                  ; No         ; |proc|proc_multiplexers:multiplexers|Selector8 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; Source assignments for Top-level Entity: |proc       ;
++------------------------------+-------+------+--------+
+; Assignment                   ; Value ; From ; To     ;
++------------------------------+-------+------+--------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R0[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R0[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R1[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R1[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R2[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R2[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R3[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R3[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R4[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R4[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R5[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R5[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R6[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R6[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[8]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[8]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[7]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[7]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[6]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[6]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[5]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[5]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[4]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[4]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[3]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[3]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[2]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[2]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[1]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[1]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; R7[0]  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; R7[0]  ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[8]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[8]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[7]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[7]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[6]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[6]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[5]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[5]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[4]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[4]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; G[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; G[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[8]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[8]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[7]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[7]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[6]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[6]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[5]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[5]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[4]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[4]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[3]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[3]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[2]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[2]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[1]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[1]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; A[0]   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; A[0]   ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[7] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[7] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[6] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[6] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[5] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[5] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[4] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[4] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[3] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[3] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[2] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[2] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[1] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[1] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Rin[0] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Rin[0] ;
++------------------------------+-------+------+--------+
+
+
++----------------------------------------------------------+
+; Source assignments for cu_FSM:cu                         ;
++------------------------------+-------+------+------------+
+; Assignment                   ; Value ; From ; To         ;
++------------------------------+-------+------+------------+
+; PRESERVE_REGISTER            ; on    ; -    ; Tstep_Q[1] ;
+; PRESERVE_REGISTER            ; on    ; -    ; Tstep_Q[0] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; I[2]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; I[2]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; I[1]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; I[1]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; I[0]       ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; I[0]       ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Tstep_D[1] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Tstep_D[1] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Tstep_D[0] ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Tstep_D[0] ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[7]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[7]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[6]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[6]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[5]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[5]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[4]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[4]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[3]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[3]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[2]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[2]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[1]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[1]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Xreg[0]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Xreg[0]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[7]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[7]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[6]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[6]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[5]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[5]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[4]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[4]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[3]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[3]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[2]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[2]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[1]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[1]    ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Yreg[0]    ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Yreg[0]    ;
++------------------------------+-------+------+------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: add_sub_unit:addsub ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; N              ; 9     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_0 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_3 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_4 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_5 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_6 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_7 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_G ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_IR ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; n              ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: regn:reg_A ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; n              ; 9     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cu_FSM:cu ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; T0             ; 00    ; Unsigned Binary               ;
+; T1             ; 01    ; Unsigned Binary               ;
+; T2             ; 10    ; Unsigned Binary               ;
+; T3             ; 11    ; Unsigned Binary               ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "cu_FSM:cu|dec3to8:decY" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; En   ; Input ; Info     ; Stuck at VCC             ;
++------+-------+----------+--------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "cu_FSM:cu|dec3to8:decX" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; En   ; Input ; Info     ; Stuck at VCC             ;
++------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "add_sub_unit:addsub"       ;
++----------+--------+----------+------------------------+
+; Port     ; Type   ; Severity ; Details                ;
++----------+--------+----------+------------------------+
+; overflow ; Output ; Info     ; Explicitly unconnected ;
+; carry    ; Output ; Info     ; Explicitly unconnected ;
++----------+--------+----------+------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 101                         ;
+;     CLR               ; 2                           ;
+;     ENA               ; 99                          ;
+; arriav_lcell_comb     ; 215                         ;
+;     arith             ; 10                          ;
+;         3 data inputs ; 1                           ;
+;         5 data inputs ; 9                           ;
+;     normal            ; 205                         ;
+;         1 data inputs ; 93                          ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 13                          ;
+;         5 data inputs ; 22                          ;
+;         6 data inputs ; 47                          ;
+; boundary_port         ; 22                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.80                        ;
+; Average LUT depth     ; 5.29                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun May 19 18:13:14 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proc -c proc
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file regn.v
+    Info (12023): Found entity 1: regn File: D:/OneDrive/sw/sw_proc/regn.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_multiplexers.v
+    Info (12023): Found entity 1: proc_multiplexers File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dec3to8.v
+    Info (12023): Found entity 1: dec3to8 File: D:/OneDrive/sw/sw_proc/dec3to8.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cu_fsm.v
+    Info (12023): Found entity 1: cu_FSM File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add_sub_unit.v
+    Info (12023): Found entity 1: add_sub_unit File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc.v
+    Info (12023): Found entity 1: proc File: D:/OneDrive/sw/sw_proc/proc.v Line: 1
+Info (12127): Elaborating entity "proc" for the top level hierarchy
+Info (12128): Elaborating entity "add_sub_unit" for hierarchy "add_sub_unit:addsub" File: D:/OneDrive/sw/sw_proc/proc.v Line: 34
+Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "overflow", which holds its previous value in one or more paths through the always construct File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
+Info (10041): Inferred latch for "carry" at add_sub_unit.v(11) File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
+Info (10041): Inferred latch for "overflow" at add_sub_unit.v(11) File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
+Info (12128): Elaborating entity "regn" for hierarchy "regn:reg_0" File: D:/OneDrive/sw/sw_proc/proc.v Line: 36
+Info (12128): Elaborating entity "cu_FSM" for hierarchy "cu_FSM:cu" File: D:/OneDrive/sw/sw_proc/proc.v Line: 64
+Info (12128): Elaborating entity "dec3to8" for hierarchy "cu_FSM:cu|dec3to8:decX" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 25
+Info (12128): Elaborating entity "proc_multiplexers" for hierarchy "proc_multiplexers:multiplexers" File: D:/OneDrive/sw/sw_proc/proc.v Line: 79
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(17): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 17
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(18): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 18
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(19): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(20): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(21): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(22): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 22
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(23): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 23
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(24): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(25): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(26): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 26
+Info (10264): Verilog HDL Case Statement information at proc_multiplexers.v(16): all case item expressions in this case statement are onehot File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "cu_FSM:cu|I[1]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
+    Info (17048): Logic cell "cu_FSM:cu|I[2]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
+    Info (17048): Logic cell "cu_FSM:cu|I[0]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
+    Info (17048): Logic cell "R2[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "R2[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R4[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R5[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R6[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R3[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R7[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R0[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "R1[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
+    Info (17048): Logic cell "G[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "A[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+    Info (17048): Logic cell "A[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
+Info (144001): Generated suppressed messages file D:/OneDrive/sw/sw_proc/output_files/proc.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 327 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 305 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Sun May 19 18:13:25 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/OneDrive/sw/sw_proc/output_files/proc.map.smsg.
+
+

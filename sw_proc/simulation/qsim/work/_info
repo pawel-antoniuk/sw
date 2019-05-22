@@ -1,0 +1,138 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OneDrive/sw/sw_proc/simulation/qsim
+vproc
+Z1 !s110 1558283077
+!i10b 1
+!s100 ^f<@Ea2?[NWSN2Cjk?4l61
+IOJN:NfVk2YN>[a:dB^A6;2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1558283075
+8proc.vo
+Fproc.vo
+Z3 L0 31
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1558283076.000000
+!s107 proc.vo|
+!s90 -work|work|proc.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vproc_vlg_vec_tst
+R1
+!i10b 1
+!s100 3;E:_T^HKelRP60gYR4a`1
+I?DJ2h;8V=OXHG5SKmXIn:0
+R2
+R0
+w1558283073
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+Z7 L0 29
+R4
+r1
+!s85 0
+31
+!s108 1558283077.000000
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R5
+R6
+vprocessor_with_ROM
+Z8 !s110 1558290476
+!i10b 1
+!s100 4HY@;i@[gT5o2CSFYo^fn2
+IPfZj2NFlSKKVQUz@XA=EB0
+R2
+R0
+w1558290475
+8processor_with_ROM.vo
+Fprocessor_with_ROM.vo
+R3
+R4
+r1
+!s85 0
+31
+Z9 !s108 1558290476.000000
+!s107 processor_with_ROM.vo|
+!s90 -work|work|processor_with_ROM.vo|
+!i113 1
+R5
+R6
+nprocessor_with_@r@o@m
+vprocessor_with_ROM_vlg_vec_tst
+R8
+!i10b 1
+!s100 1eO5JXfkz4RUb2f4j>U2G2
+IIDVN0e8SXeH<O=4kRnEPJ0
+R2
+R0
+w1558290473
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+R7
+R4
+r1
+!s85 0
+31
+R9
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R5
+R6
+nprocessor_with_@r@o@m_vlg_vec_tst
+vsw_proc
+Z10 !s110 1558279307
+!i10b 1
+!s100 ^XA`ZPS>K>k;haW;c9m8=2
+IeGdn]=7H:7<9NU0i5RTL70
+R2
+R0
+w1558279306
+8sw_proc.vo
+Fsw_proc.vo
+R3
+R4
+r1
+!s85 0
+31
+Z11 !s108 1558279307.000000
+!s107 sw_proc.vo|
+!s90 -work|work|sw_proc.vo|
+!i113 1
+R5
+R6
+vsw_proc_vlg_vec_tst
+R10
+!i10b 1
+!s100 k@4cj1B_in@bho8gh44Ud3
+IGeN63eK^BM^gf=hX8>@ZA2
+R2
+R0
+w1558279305
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+R7
+R4
+r1
+!s85 0
+31
+R11
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6
