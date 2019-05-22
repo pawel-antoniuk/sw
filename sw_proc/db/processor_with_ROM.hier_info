@@ -181,9 +181,10 @@ DIN[6] => DIN[6].IN2
 DIN[7] => DIN[7].IN2
 DIN[8] => DIN[8].IN2
 Resetn => Resetn.IN1
-Clock => Clock.IN12
+Clock => Clock.IN15
 Run => Run.IN1
 Done <= cu_FSM:cu.Done
+W <= regn:reg_W.port3
 BusWires[0] <= BusWires[0].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[1] <= BusWires[1].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[2] <= BusWires[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -193,6 +194,24 @@ BusWires[5] <= BusWires[5].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[6] <= BusWires[6].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[7] <= BusWires[7].DB_MAX_OUTPUT_PORT_TYPE
 BusWires[8] <= BusWires[8].DB_MAX_OUTPUT_PORT_TYPE
+ADDR[0] <= regn:reg_ADDR.port3
+ADDR[1] <= regn:reg_ADDR.port3
+ADDR[2] <= regn:reg_ADDR.port3
+ADDR[3] <= regn:reg_ADDR.port3
+ADDR[4] <= regn:reg_ADDR.port3
+ADDR[5] <= regn:reg_ADDR.port3
+ADDR[6] <= regn:reg_ADDR.port3
+ADDR[7] <= regn:reg_ADDR.port3
+ADDR[8] <= regn:reg_ADDR.port3
+DOUT[0] <= regn:reg_DOUT.port3
+DOUT[1] <= regn:reg_DOUT.port3
+DOUT[2] <= regn:reg_DOUT.port3
+DOUT[3] <= regn:reg_DOUT.port3
+DOUT[4] <= regn:reg_DOUT.port3
+DOUT[5] <= regn:reg_DOUT.port3
+DOUT[6] <= regn:reg_DOUT.port3
+DOUT[7] <= regn:reg_DOUT.port3
+DOUT[8] <= regn:reg_DOUT.port3
 
 
 |processor_with_ROM|proc:cpu|add_sub_unit:addsub
@@ -529,45 +548,6 @@ Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|processor_with_ROM|proc:cpu|regn:reg_7
-R[0] => Q[0]~reg0.DATAIN
-R[1] => Q[1]~reg0.DATAIN
-R[2] => Q[2]~reg0.DATAIN
-R[3] => Q[3]~reg0.DATAIN
-R[4] => Q[4]~reg0.DATAIN
-R[5] => Q[5]~reg0.DATAIN
-R[6] => Q[6]~reg0.DATAIN
-R[7] => Q[7]~reg0.DATAIN
-R[8] => Q[8]~reg0.DATAIN
-Rin => Q[0]~reg0.ENA
-Rin => Q[1]~reg0.ENA
-Rin => Q[2]~reg0.ENA
-Rin => Q[3]~reg0.ENA
-Rin => Q[4]~reg0.ENA
-Rin => Q[5]~reg0.ENA
-Rin => Q[6]~reg0.ENA
-Rin => Q[7]~reg0.ENA
-Rin => Q[8]~reg0.ENA
-Clock => Q[0]~reg0.CLK
-Clock => Q[1]~reg0.CLK
-Clock => Q[2]~reg0.CLK
-Clock => Q[3]~reg0.CLK
-Clock => Q[4]~reg0.CLK
-Clock => Q[5]~reg0.CLK
-Clock => Q[6]~reg0.CLK
-Clock => Q[7]~reg0.CLK
-Clock => Q[8]~reg0.CLK
-Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |processor_with_ROM|proc:cpu|regn:reg_G
 R[0] => Q[0]~reg0.DATAIN
 R[1] => Q[1]~reg0.DATAIN
@@ -685,6 +665,171 @@ Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|processor_with_ROM|proc:cpu|regn:reg_ADDR
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+Rin => Q[0]~reg0.ENA
+Rin => Q[1]~reg0.ENA
+Rin => Q[2]~reg0.ENA
+Rin => Q[3]~reg0.ENA
+Rin => Q[4]~reg0.ENA
+Rin => Q[5]~reg0.ENA
+Rin => Q[6]~reg0.ENA
+Rin => Q[7]~reg0.ENA
+Rin => Q[8]~reg0.ENA
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor_with_ROM|proc:cpu|regn:reg_DOUT
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+Rin => Q[0]~reg0.ENA
+Rin => Q[1]~reg0.ENA
+Rin => Q[2]~reg0.ENA
+Rin => Q[3]~reg0.ENA
+Rin => Q[4]~reg0.ENA
+Rin => Q[5]~reg0.ENA
+Rin => Q[6]~reg0.ENA
+Rin => Q[7]~reg0.ENA
+Rin => Q[8]~reg0.ENA
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor_with_ROM|proc:cpu|regn:reg_W
+R[0] => Q[0]~reg0.DATAIN
+R[1] => Q[1]~reg0.DATAIN
+R[2] => Q[2]~reg0.DATAIN
+R[3] => Q[3]~reg0.DATAIN
+R[4] => Q[4]~reg0.DATAIN
+R[5] => Q[5]~reg0.DATAIN
+R[6] => Q[6]~reg0.DATAIN
+R[7] => Q[7]~reg0.DATAIN
+R[8] => Q[8]~reg0.DATAIN
+Rin => Q[0]~reg0.ENA
+Rin => Q[1]~reg0.ENA
+Rin => Q[2]~reg0.ENA
+Rin => Q[3]~reg0.ENA
+Rin => Q[4]~reg0.ENA
+Rin => Q[5]~reg0.ENA
+Rin => Q[6]~reg0.ENA
+Rin => Q[7]~reg0.ENA
+Rin => Q[8]~reg0.ENA
+Clock => Q[0]~reg0.CLK
+Clock => Q[1]~reg0.CLK
+Clock => Q[2]~reg0.CLK
+Clock => Q[3]~reg0.CLK
+Clock => Q[4]~reg0.CLK
+Clock => Q[5]~reg0.CLK
+Clock => Q[6]~reg0.CLK
+Clock => Q[7]~reg0.CLK
+Clock => Q[8]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|processor_with_ROM|proc:cpu|counter_9_bits_on_sload:pc
+data[0] => count.DATAB
+data[1] => count.DATAB
+data[2] => count.DATAB
+data[3] => count.DATAB
+data[4] => count.DATAB
+data[5] => count.DATAB
+data[6] => count.DATAB
+data[7] => count.DATAB
+data[8] => count.DATAB
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+clk => count[0]~reg0.CLK
+clk => count[1]~reg0.CLK
+clk => count[2]~reg0.CLK
+clk => count[3]~reg0.CLK
+clk => count[4]~reg0.CLK
+clk => count[5]~reg0.CLK
+clk => count[6]~reg0.CLK
+clk => count[7]~reg0.CLK
+clk => count[8]~reg0.CLK
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[4] <= count[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[5] <= count[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[6] <= count[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[7] <= count[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[8] <= count[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |processor_with_ROM|proc:cpu|cu_FSM:cu
 Clock => Tstep_Q[0].CLK
 Clock => Tstep_Q[1].CLK
@@ -723,6 +868,7 @@ Gout <= Gout.DB_MAX_OUTPUT_PORT_TYPE
 Ain <= Ain.DB_MAX_OUTPUT_PORT_TYPE
 DINout <= DINout.DB_MAX_OUTPUT_PORT_TYPE
 AddSub <= AddSub.DB_MAX_OUTPUT_PORT_TYPE
+incr_pc <= <GND>
 
 
 |processor_with_ROM|proc:cpu|cu_FSM:cu|dec3to8:decX

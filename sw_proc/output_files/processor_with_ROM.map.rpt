@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor_with_ROM
-Sun May 19 20:31:52 2019
+Wed May 22 23:48:02 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -31,20 +31,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  23. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_4
  24. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_5
  25. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_6
- 26. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_7
- 27. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_G
- 28. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_IR
- 29. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_A
- 30. Parameter Settings for User Entity Instance: proc:cpu|cu_FSM:cu
- 31. altsyncram Parameter Settings by Entity Instance
- 32. Port Connectivity Checks: "proc:cpu|cu_FSM:cu|dec3to8:decY"
- 33. Port Connectivity Checks: "proc:cpu|cu_FSM:cu|dec3to8:decX"
- 34. Port Connectivity Checks: "proc:cpu|add_sub_unit:addsub"
- 35. Port Connectivity Checks: "counter_N_bits:counter"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
- 39. Analysis & Synthesis Suppressed Messages
+ 26. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_G
+ 27. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_IR
+ 28. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_A
+ 29. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_ADDR
+ 30. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_DOUT
+ 31. Parameter Settings for User Entity Instance: proc:cpu|regn:reg_W
+ 32. Parameter Settings for User Entity Instance: proc:cpu|cu_FSM:cu
+ 33. altsyncram Parameter Settings by Entity Instance
+ 34. Port Connectivity Checks: "proc:cpu|cu_FSM:cu|dec3to8:decY"
+ 35. Port Connectivity Checks: "proc:cpu|cu_FSM:cu|dec3to8:decX"
+ 36. Port Connectivity Checks: "proc:cpu|regn:reg_W"
+ 37. Port Connectivity Checks: "proc:cpu|add_sub_unit:addsub"
+ 38. Port Connectivity Checks: "proc:cpu"
+ 39. Port Connectivity Checks: "counter_N_bits:counter"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+ 43. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,7 +74,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 19 20:31:52 2019       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 22 23:48:02 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; processor_with_ROM                          ;
 ; Top-level Entity Name           ; processor_with_ROM                          ;
@@ -194,32 +198,33 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
-; inst_mem.mif                     ; yes             ; User Memory Initialization File  ; D:/OneDrive/sw/sw_proc/inst_mem.mif                                          ;         ;
-; regn.v                           ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/regn.v                                                ;         ;
-; proc_multiplexers.v              ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/proc_multiplexers.v                                   ;         ;
-; proc.v                           ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/proc.v                                                ;         ;
-; dec3to8.v                        ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/dec3to8.v                                             ;         ;
-; cu_FSM.v                         ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/cu_FSM.v                                              ;         ;
-; add_sub_unit.v                   ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/add_sub_unit.v                                        ;         ;
-; processor_with_ROM.v             ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/processor_with_ROM.v                                  ;         ;
-; counter_N_bits.v                 ; yes             ; User Verilog HDL File            ; D:/OneDrive/sw/sw_proc/counter_N_bits.v                                      ;         ;
-; inst_mem.v                       ; yes             ; User Wizard-Generated File       ; D:/OneDrive/sw/sw_proc/inst_mem.v                                            ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_7ag1.tdf           ; yes             ; Auto-Generated Megafunction      ; D:/OneDrive/sw/sw_proc/db/altsyncram_7ag1.tdf                                ;         ;
-+----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------+---------+
+; inst_mem.mif                     ; yes             ; User Memory Initialization File  ; C:/Users/admin/Desktop/sw/sw_proc/inst_mem.mif                    ;         ;
+; regn.v                           ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/regn.v                          ;         ;
+; proc_multiplexers.v              ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v             ;         ;
+; proc.v                           ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/proc.v                          ;         ;
+; dec3to8.v                        ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/dec3to8.v                       ;         ;
+; cu_FSM.v                         ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v                        ;         ;
+; add_sub_unit.v                   ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v                  ;         ;
+; processor_with_ROM.v             ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/processor_with_ROM.v            ;         ;
+; counter_N_bits.v                 ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/counter_N_bits.v                ;         ;
+; inst_mem.v                       ; yes             ; User Wizard-Generated File       ; C:/Users/admin/Desktop/sw/sw_proc/inst_mem.v                      ;         ;
+; counter_9_bits_on_sload.v        ; yes             ; User Verilog HDL File            ; C:/Users/admin/Desktop/sw/sw_proc/counter_9_bits_on_sload.v       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; d:/quartus4/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_7ag1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/admin/Desktop/sw/sw_proc/db/altsyncram_7ag1.tdf          ;         ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -251,32 +256,32 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name        ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |processor_with_ROM                       ; 220 (0)             ; 106 (0)                   ; 288               ; 0          ; 14   ; 0            ; |processor_with_ROM                                                                             ; processor_with_ROM ; work         ;
-;    |counter_N_bits:counter|               ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|counter_N_bits:counter                                                      ; counter_N_bits     ; work         ;
-;    |inst_mem:mem|                         ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem                                                                ; inst_mem           ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;          |altsyncram_7ag1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem|altsyncram:altsyncram_component|altsyncram_7ag1:auto_generated ; altsyncram_7ag1    ; work         ;
-;    |proc:cpu|                             ; 215 (98)            ; 101 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu                                                                    ; proc               ; work         ;
-;       |add_sub_unit:addsub|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|add_sub_unit:addsub                                                ; add_sub_unit       ; work         ;
-;       |cu_FSM:cu|                         ; 37 (37)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|cu_FSM:cu                                                          ; cu_FSM             ; work         ;
-;       |proc_multiplexers:multiplexers|    ; 70 (70)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|proc_multiplexers:multiplexers                                     ; proc_multiplexers  ; work         ;
-;       |regn:reg_0|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_0                                                         ; regn               ; work         ;
-;       |regn:reg_1|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_1                                                         ; regn               ; work         ;
-;       |regn:reg_2|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_2                                                         ; regn               ; work         ;
-;       |regn:reg_3|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_3                                                         ; regn               ; work         ;
-;       |regn:reg_4|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_4                                                         ; regn               ; work         ;
-;       |regn:reg_5|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_5                                                         ; regn               ; work         ;
-;       |regn:reg_6|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_6                                                         ; regn               ; work         ;
-;       |regn:reg_7|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_7                                                         ; regn               ; work         ;
-;       |regn:reg_A|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_A                                                         ; regn               ; work         ;
-;       |regn:reg_G|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_G                                                         ; regn               ; work         ;
-;       |regn:reg_IR|                       ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_IR                                                        ; regn               ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                           ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name             ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |processor_with_ROM                       ; 220 (0)             ; 106 (0)                   ; 288               ; 0          ; 14   ; 0            ; |processor_with_ROM                                                                             ; processor_with_ROM      ; work         ;
+;    |counter_N_bits:counter|               ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|counter_N_bits:counter                                                      ; counter_N_bits          ; work         ;
+;    |inst_mem:mem|                         ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem                                                                ; inst_mem                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem|altsyncram:altsyncram_component                                ; altsyncram              ; work         ;
+;          |altsyncram_7ag1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 288               ; 0          ; 0    ; 0            ; |processor_with_ROM|inst_mem:mem|altsyncram:altsyncram_component|altsyncram_7ag1:auto_generated ; altsyncram_7ag1         ; work         ;
+;    |proc:cpu|                             ; 215 (98)            ; 101 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu                                                                    ; proc                    ; work         ;
+;       |add_sub_unit:addsub|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|add_sub_unit:addsub                                                ; add_sub_unit            ; work         ;
+;       |counter_9_bits_on_sload:pc|        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|counter_9_bits_on_sload:pc                                         ; counter_9_bits_on_sload ; work         ;
+;       |cu_FSM:cu|                         ; 37 (37)             ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|cu_FSM:cu                                                          ; cu_FSM                  ; work         ;
+;       |proc_multiplexers:multiplexers|    ; 70 (70)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|proc_multiplexers:multiplexers                                     ; proc_multiplexers       ; work         ;
+;       |regn:reg_0|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_0                                                         ; regn                    ; work         ;
+;       |regn:reg_1|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_1                                                         ; regn                    ; work         ;
+;       |regn:reg_2|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_2                                                         ; regn                    ; work         ;
+;       |regn:reg_3|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_3                                                         ; regn                    ; work         ;
+;       |regn:reg_4|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_4                                                         ; regn                    ; work         ;
+;       |regn:reg_5|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_5                                                         ; regn                    ; work         ;
+;       |regn:reg_6|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_6                                                         ; regn                    ; work         ;
+;       |regn:reg_A|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_A                                                         ; regn                    ; work         ;
+;       |regn:reg_G|                        ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_G                                                         ; regn                    ; work         ;
+;       |regn:reg_IR|                       ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |processor_with_ROM|proc:cpu|regn:reg_IR                                                        ; regn                    ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -752,16 +757,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_7 ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; n              ; 9     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_G ;
 +----------------+-------+-----------------------------------------+
 ; Parameter Name ; Value ; Type                                    ;
@@ -783,6 +778,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_A ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 9     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_ADDR ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; n              ; 9     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_DOUT ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; n              ; 9     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: proc:cpu|regn:reg_W ;
 +----------------+-------+-----------------------------------------+
 ; Parameter Name ; Value ; Type                                    ;
 +----------------+-------+-----------------------------------------+
@@ -842,6 +867,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-----------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:cpu|regn:reg_W"                                                                                                                                                                  ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; R       ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "R[8..1]" will be connected to GND.                                          ;
+; Rin     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Rin[-1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; Q       ; Output ; Warning  ; Output or bidir port (9 bits) is wider than the port expression (1 bits) it drives; bit(s) "Q[8..1]" have no fanouts                                                               ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------+
 ; Port Connectivity Checks: "proc:cpu|add_sub_unit:addsub" ;
 +----------+--------+----------+---------------------------+
@@ -850,6 +887,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; overflow ; Output ; Info     ; Explicitly unconnected    ;
 ; carry    ; Output ; Info     ; Explicitly unconnected    ;
 +----------+--------+----------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "proc:cpu"                                                                                                ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; W    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; ADDR ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; DOUT ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------+
@@ -893,7 +941,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -903,35 +951,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 19 20:31:40 2019
+    Info: Processing started: Wed May 22 23:47:37 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor_with_ROM -c processor_with_ROM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file regn.v
-    Info (12023): Found entity 1: regn File: D:/OneDrive/sw/sw_proc/regn.v Line: 1
+    Info (12023): Found entity 1: regn File: C:/Users/admin/Desktop/sw/sw_proc/regn.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file proc_multiplexers.v
-    Info (12023): Found entity 1: proc_multiplexers File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 1
+    Info (12023): Found entity 1: proc_multiplexers File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file proc.v
-    Info (12023): Found entity 1: proc File: D:/OneDrive/sw/sw_proc/proc.v Line: 1
+    Info (12023): Found entity 1: proc File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dec3to8.v
-    Info (12023): Found entity 1: dec3to8 File: D:/OneDrive/sw/sw_proc/dec3to8.v Line: 1
+    Info (12023): Found entity 1: dec3to8 File: C:/Users/admin/Desktop/sw/sw_proc/dec3to8.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cu_fsm.v
-    Info (12023): Found entity 1: cu_FSM File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 1
+    Info (12023): Found entity 1: cu_FSM File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file add_sub_unit.v
-    Info (12023): Found entity 1: add_sub_unit File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 1
+    Info (12023): Found entity 1: add_sub_unit File: C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file processor_with_rom.v
-    Info (12023): Found entity 1: processor_with_ROM File: D:/OneDrive/sw/sw_proc/processor_with_ROM.v Line: 1
+    Info (12023): Found entity 1: processor_with_ROM File: C:/Users/admin/Desktop/sw/sw_proc/processor_with_ROM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file counter_n_bits.v
-    Info (12023): Found entity 1: counter_N_bits File: D:/OneDrive/sw/sw_proc/counter_N_bits.v Line: 1
+    Info (12023): Found entity 1: counter_N_bits File: C:/Users/admin/Desktop/sw/sw_proc/counter_N_bits.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file inst_mem.v
-    Info (12023): Found entity 1: inst_mem File: D:/OneDrive/sw/sw_proc/inst_mem.v Line: 39
+    Info (12023): Found entity 1: inst_mem File: C:/Users/admin/Desktop/sw/sw_proc/inst_mem.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file counter_9_bits_on_sload.v
+    Info (12023): Found entity 1: counter_9_bits_on_sload File: C:/Users/admin/Desktop/sw/sw_proc/counter_9_bits_on_sload.v Line: 1
 Info (12127): Elaborating entity "processor_with_ROM" for the top level hierarchy
-Info (12128): Elaborating entity "counter_N_bits" for hierarchy "counter_N_bits:counter" File: D:/OneDrive/sw/sw_proc/processor_with_ROM.v Line: 15
-Warning (10230): Verilog HDL assignment warning at counter_N_bits.v(9): truncated value with size 32 to match size of target (5) File: D:/OneDrive/sw/sw_proc/counter_N_bits.v Line: 9
-Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:mem" File: D:/OneDrive/sw/sw_proc/processor_with_ROM.v Line: 20
-Info (12128): Elaborating entity "altsyncram" for hierarchy "inst_mem:mem|altsyncram:altsyncram_component" File: D:/OneDrive/sw/sw_proc/inst_mem.v Line: 81
-Info (12130): Elaborated megafunction instantiation "inst_mem:mem|altsyncram:altsyncram_component" File: D:/OneDrive/sw/sw_proc/inst_mem.v Line: 81
-Info (12133): Instantiated megafunction "inst_mem:mem|altsyncram:altsyncram_component" with the following parameter: File: D:/OneDrive/sw/sw_proc/inst_mem.v Line: 81
+Info (12128): Elaborating entity "counter_N_bits" for hierarchy "counter_N_bits:counter" File: C:/Users/admin/Desktop/sw/sw_proc/processor_with_ROM.v Line: 15
+Warning (10230): Verilog HDL assignment warning at counter_N_bits.v(9): truncated value with size 32 to match size of target (5) File: C:/Users/admin/Desktop/sw/sw_proc/counter_N_bits.v Line: 9
+Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:mem" File: C:/Users/admin/Desktop/sw/sw_proc/processor_with_ROM.v Line: 20
+Info (12128): Elaborating entity "altsyncram" for hierarchy "inst_mem:mem|altsyncram:altsyncram_component" File: C:/Users/admin/Desktop/sw/sw_proc/inst_mem.v Line: 81
+Info (12130): Elaborated megafunction instantiation "inst_mem:mem|altsyncram:altsyncram_component" File: C:/Users/admin/Desktop/sw/sw_proc/inst_mem.v Line: 81
+Info (12133): Instantiated megafunction "inst_mem:mem|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/admin/Desktop/sw/sw_proc/inst_mem.v Line: 81
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
@@ -947,125 +997,129 @@ Info (12133): Instantiated megafunction "inst_mem:mem|altsyncram:altsyncram_comp
     Info (12134): Parameter "width_a" = "9"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7ag1.tdf
-    Info (12023): Found entity 1: altsyncram_7ag1 File: D:/OneDrive/sw/sw_proc/db/altsyncram_7ag1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_7ag1" for hierarchy "inst_mem:mem|altsyncram:altsyncram_component|altsyncram_7ag1:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "proc" for hierarchy "proc:cpu" File: D:/OneDrive/sw/sw_proc/processor_with_ROM.v Line: 28
-Info (12128): Elaborating entity "add_sub_unit" for hierarchy "proc:cpu|add_sub_unit:addsub" File: D:/OneDrive/sw/sw_proc/proc.v Line: 34
-Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "overflow", which holds its previous value in one or more paths through the always construct File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
-Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
-Info (10041): Inferred latch for "carry" at add_sub_unit.v(11) File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
-Info (10041): Inferred latch for "overflow" at add_sub_unit.v(11) File: D:/OneDrive/sw/sw_proc/add_sub_unit.v Line: 11
-Info (12128): Elaborating entity "regn" for hierarchy "proc:cpu|regn:reg_0" File: D:/OneDrive/sw/sw_proc/proc.v Line: 36
-Info (12128): Elaborating entity "cu_FSM" for hierarchy "proc:cpu|cu_FSM:cu" File: D:/OneDrive/sw/sw_proc/proc.v Line: 64
-Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:cpu|cu_FSM:cu|dec3to8:decX" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 25
-Info (12128): Elaborating entity "proc_multiplexers" for hierarchy "proc:cpu|proc_multiplexers:multiplexers" File: D:/OneDrive/sw/sw_proc/proc.v Line: 79
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(17): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 17
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(18): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 18
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(19): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 19
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(20): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 20
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(21): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 21
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(22): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 22
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(23): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 23
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(24): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 24
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(25): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 25
-Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(26): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 26
-Info (10264): Verilog HDL Case Statement information at proc_multiplexers.v(16): all case item expressions in this case statement are onehot File: D:/OneDrive/sw/sw_proc/proc_multiplexers.v Line: 16
+    Info (12023): Found entity 1: altsyncram_7ag1 File: C:/Users/admin/Desktop/sw/sw_proc/db/altsyncram_7ag1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_7ag1" for hierarchy "inst_mem:mem|altsyncram:altsyncram_component|altsyncram_7ag1:auto_generated" File: d:/quartus4/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "proc" for hierarchy "proc:cpu" File: C:/Users/admin/Desktop/sw/sw_proc/processor_with_ROM.v Line: 28
+Info (12128): Elaborating entity "add_sub_unit" for hierarchy "proc:cpu|add_sub_unit:addsub" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "overflow", which holds its previous value in one or more paths through the always construct File: C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at add_sub_unit.v(11): inferring latch(es) for variable "carry", which holds its previous value in one or more paths through the always construct File: C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v Line: 11
+Info (10041): Inferred latch for "carry" at add_sub_unit.v(11) File: C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v Line: 11
+Info (10041): Inferred latch for "overflow" at add_sub_unit.v(11) File: C:/Users/admin/Desktop/sw/sw_proc/add_sub_unit.v Line: 11
+Info (12128): Elaborating entity "regn" for hierarchy "proc:cpu|regn:reg_0" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 41
+Info (12128): Elaborating entity "counter_9_bits_on_sload" for hierarchy "proc:cpu|counter_9_bits_on_sload:pc" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 55
+Warning (10230): Verilog HDL assignment warning at counter_9_bits_on_sload.v(13): truncated value with size 32 to match size of target (9) File: C:/Users/admin/Desktop/sw/sw_proc/counter_9_bits_on_sload.v Line: 13
+Info (12128): Elaborating entity "cu_FSM" for hierarchy "proc:cpu|cu_FSM:cu" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 74
+Warning (10034): Output port "incr_pc" at cu_FSM.v(16) has no driver File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 16
+Info (12128): Elaborating entity "dec3to8" for hierarchy "proc:cpu|cu_FSM:cu|dec3to8:decX" File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 26
+Info (12128): Elaborating entity "proc_multiplexers" for hierarchy "proc:cpu|proc_multiplexers:multiplexers" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 89
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(17): variable "G" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 17
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(18): variable "DIN" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 18
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(19): variable "R7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(20): variable "R6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(21): variable "R5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(22): variable "R4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 22
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(23): variable "R3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 23
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(24): variable "R2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(25): variable "R1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at proc_multiplexers.v(26): variable "R0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 26
+Info (10264): Verilog HDL Case Statement information at proc_multiplexers.v(16): all case item expressions in this case statement are onehot File: C:/Users/admin/Desktop/sw/sw_proc/proc_multiplexers.v Line: 16
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[1]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
-    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[2]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
-    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[0]" File: D:/OneDrive/sw/sw_proc/cu_FSM.v Line: 21
-    Info (17048): Logic cell "proc:cpu|R2[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|R2[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R4[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R5[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R6[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R3[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R7[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R0[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|R1[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 9
-    Info (17048): Logic cell "proc:cpu|G[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 10
-    Info (17048): Logic cell "proc:cpu|A[0]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[1]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[2]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[3]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[4]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[5]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[6]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[7]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-    Info (17048): Logic cell "proc:cpu|A[8]" File: D:/OneDrive/sw/sw_proc/proc.v Line: 12
-Info (144001): Generated suppressed messages file D:/OneDrive/sw/sw_proc/output_files/processor_with_ROM.map.smsg
+    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[1]" File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 22
+    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[2]" File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 22
+    Info (17048): Logic cell "proc:cpu|cu_FSM:cu|I[0]" File: C:/Users/admin/Desktop/sw/sw_proc/cu_FSM.v Line: 22
+    Info (17048): Logic cell "proc:cpu|R2[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|R2[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R4[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R5[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R6[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R3[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R7[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R0[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|R1[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 10
+    Info (17048): Logic cell "proc:cpu|G[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 11
+    Info (17048): Logic cell "proc:cpu|A[0]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[1]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[2]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[3]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[4]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[5]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[6]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[7]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+    Info (17048): Logic cell "proc:cpu|A[8]" File: C:/Users/admin/Desktop/sw/sw_proc/proc.v Line: 13
+Info (144001): Generated suppressed messages file C:/Users/admin/Desktop/sw/sw_proc/output_files/processor_with_ROM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 333 device resources after synthesis - the final resource count might be different
@@ -1073,16 +1127,16 @@ Info (21057): Implemented 333 device resources after synthesis - the final resou
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 310 logic cells
     Info (21064): Implemented 9 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
     Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Sun May 19 20:31:52 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Processing ended: Wed May 22 23:48:02 2019
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:52
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/OneDrive/sw/sw_proc/output_files/processor_with_ROM.map.smsg.
+The suppressed messages can be found in C:/Users/admin/Desktop/sw/sw_proc/output_files/processor_with_ROM.map.smsg.
 
 

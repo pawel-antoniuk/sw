@@ -11,28 +11,29 @@
 	output reg Gout,
 	output reg Ain,
 	output reg DINout,
-	output reg AddSub
- ); 
+	output reg AddSub,
+  output reg incr_pc
+ );
  	parameter T0 = 2'b00, T1 = 2'b01, T2 = 2'b10, T3 = 2'b11;
- 
+
  	(* keep *) reg [1:0] Tstep_D;
 	(* keep *) reg [1:0] Tstep_Q;
 	(* keep *) wire [7:0] Xreg, Yreg;
 	(* keep *) wire [2:0] I;
-	
+
 	assign I[2:0] = IR[8:6];
-	
+
 	dec3to8 decX (IR[5:3], 1'b1, Xreg);
-	dec3to8 decY (IR[2:0], 1'b1, Yreg);	
- 
+	dec3to8 decY (IR[2:0], 1'b1, Yreg);
+
 	// Zarządzaj tabelą stanów FSM
 	always @(Tstep_Q, Run, Done)
 	begin
 		case (Tstep_Q)
 			T0: begin // W tej chwili dane są ładowane do IR
-				if (!Run) 
+				if (!Run)
 					Tstep_D = T0;
-				else 
+				else
 					Tstep_D = T1;
 			end
 			T1:
@@ -50,19 +51,19 @@
 			end
 		endcase
 	end
-	
+
 	/*
 	000 - mv
 	001 - mvi
 	010 - add
 	011 - sub
 	*/
-	
+
 	// Sterowanie wejściami FSM
 	always @(Tstep_Q, I, Xreg, Yreg)
 	begin
 		IRin   = 1'b0;
-		Gin	 = 1'b0;		
+		Gin	 = 1'b0;
 		Rin  	 = 8'b00000000;
 		Rout   = 8'b00000000;
 		Gout	 = 1'b0;
@@ -138,13 +139,12 @@
 				endcase
 		endcase
 	end
-	
+
 	// sterowanie przerzutnikami FSM
 	always @(posedge Clock, negedge Resetn)
 		if (!Resetn)
 			Tstep_Q[1:0] = T0;
-		else 
+		else
 			Tstep_Q[1:0] = Tstep_D[1:0];
- 
+
  endmodule
- 
